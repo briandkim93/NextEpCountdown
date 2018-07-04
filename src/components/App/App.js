@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {searchResults: []};
+    this.state = {searchResults: [], selectedShowId: ''};
   }
   updateSearchResults(query) {
     axios.get(`http://api.tvmaze.com/search/shows?q=${query}`)
@@ -19,7 +19,10 @@ class App extends Component {
       <div className="app">
         <div className="container my-4">
           <SearchBar onSearchTermChange={query => this.updateSearchResults(query)} />
-          <ShowList searchResults={this.state.searchResults} />
+          <ShowList 
+            searchResults={this.state.searchResults} 
+            onShowSelect={showId => this.setState({selectedShowId: showId})}
+          />
         </div>
       </div>
     );
