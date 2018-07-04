@@ -16,6 +16,7 @@ class SearchBar extends Component {
     return (
       <div>
         <input 
+          className="col-12"
           placeholder="Search TV Show"
           value={this.state.query}
           onChange={this.updateSearchQuery}

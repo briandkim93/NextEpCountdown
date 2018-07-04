@@ -8,7 +8,7 @@ class ShowSelection extends Component {
   render() {
     if (this.props.showInfo) {
       return (
-        <li>{this.props.showInfo.show.name}</li>
+        <li className="list-group-item">{this.props.showInfo.show.name}</li>
       );
     } else {
       return <li></li>;

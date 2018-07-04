@@ -7,7 +7,7 @@ const ShowList = (props) => {
       searchResult => <ShowSelection showInfo={searchResult} />
     );
   return (
-    <ul>
+    <ul className="list-group">
       {showSelections}
     </ul>
   );

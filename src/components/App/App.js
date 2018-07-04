@@ -17,8 +17,10 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <SearchBar onSearchTermChange={query => this.updateSearchResults(query)} />
-        <ShowList searchResults={this.state.searchResults} />
+        <div className="container my-4">
+          <SearchBar onSearchTermChange={query => this.updateSearchResults(query)} />
+          <ShowList searchResults={this.state.searchResults} />
+        </div>
       </div>
     );
   }
