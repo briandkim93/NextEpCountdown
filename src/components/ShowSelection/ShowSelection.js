@@ -1,22 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ShowSelection extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    if (this.props.showInfo) {
-      return (
-        <li 
-          className="list-group-item" 
-          onClick={() => this.props.onShowSelect(this.props.showInfo.show.id)}
-        >
-          {this.props.showInfo.show.name}
-        </li>
-      );
-    } else {
-      return <li></li>;
-    }
+const ShowSelection = (props) => {
+  if (props.showInfo) {
+    return (
+      <li 
+        className="list-group-item" 
+        onClick={() => props.onShowSelect(props.showInfo.show.id)}
+      >
+        {props.showInfo.show.name}
+      </li>
+    );
+  } else {
+    return <li></li>;
   }
 }
 
