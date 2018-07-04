@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import SearchBar from '../SearchBar/SearchBar';
+import ShowList from '../ShowList/ShowList';
 
 class App extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class App extends Component {
     return (
       <div className="app">
         <SearchBar onSearchTermChange={query => this.updateSearchResults(query)} />
+        <ShowList searchResults={this.state.searchResults} />
       </div>
     );
   }
