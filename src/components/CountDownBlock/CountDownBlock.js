@@ -6,7 +6,7 @@ const CountDownBlock = (props) => {
   return (
     <figure className="unit-block">
       <span className="unit-value">{props.unitValue}</span>
-      <figcaption>{props.caption}</figcaption>
+      <figcaption className="caption">{props.caption}</figcaption>
     </figure>
   );
 }
