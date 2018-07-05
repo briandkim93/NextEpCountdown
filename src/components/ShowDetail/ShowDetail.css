@@ -28,6 +28,10 @@
   height: 95px;
 }
 
+.unavailable-summary {
+  text-align: center;
+}
+
 hr {
   margin: 8px 0;
 
