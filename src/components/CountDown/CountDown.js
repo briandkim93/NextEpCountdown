@@ -40,13 +40,17 @@ class CountDown extends Component {
       const timeLeft = this.convertSeconds(this.state.secondsLeft);
       return (
         <div className="count-down">
-          <CountDownBlock unitValue={timeLeft.days} caption="Days" />
-          <CountDownBlock unitValue=":" caption="&nbsp;" />
-          <CountDownBlock unitValue={timeLeft.hours >= 10 ? timeLeft.hours : `0${timeLeft.hours}`} caption="Hours" />
-          <CountDownBlock unitValue=":" caption="&nbsp;" />
-          <CountDownBlock unitValue={timeLeft.mins >= 10 ? timeLeft.mins : `0${timeLeft.mins}`} caption="Minutes" />
-          <CountDownBlock unitValue=":" caption="&nbsp;" />
-          <CountDownBlock unitValue={timeLeft.secs >= 10 ? timeLeft.secs : `0${timeLeft.secs}`} caption="Seconds" />
+          <div className="count-down-row">
+            <CountDownBlock unitValue={timeLeft.days} caption="Days" />
+            <CountDownBlock unitValue=":" caption="&nbsp;" />
+            <CountDownBlock unitValue={timeLeft.hours >= 10 ? timeLeft.hours : `0${timeLeft.hours}`} caption="Hours" />
+            <CountDownBlock unitValue=":" caption="&nbsp;" />
+          </div>
+          <div className="count-down-row">
+            <CountDownBlock unitValue={timeLeft.mins >= 10 ? timeLeft.mins : `0${timeLeft.mins}`} caption="Minutes" />
+            <CountDownBlock unitValue=":" caption="&nbsp;" />
+            <CountDownBlock unitValue={timeLeft.secs >= 10 ? timeLeft.secs : `0${timeLeft.secs}`} caption="Seconds" />
+          </div>
         </div>
       );
     } else if (this.props.secondsUntilNextEp === 0) {
@@ -54,13 +58,17 @@ class CountDown extends Component {
     } else {
       return (
         <div className="count-down">
-          <CountDownBlock unitValue="0" caption="Days" />
-          <CountDownBlock unitValue=":" caption="&nbsp;" />
-          <CountDownBlock unitValue="00" caption="Hours" />
-          <CountDownBlock unitValue=":" caption="&nbsp;" />
-          <CountDownBlock unitValue="00" caption="Minutes" />
-          <CountDownBlock unitValue=":" caption="&nbsp;" />
-          <CountDownBlock unitValue="00" caption="Seconds" />
+          <div className="count-down-row">
+            <CountDownBlock unitValue="0" caption="Days" />
+            <CountDownBlock unitValue=":" caption="&nbsp;" />
+            <CountDownBlock unitValue="00" caption="Hours" />
+            <CountDownBlock unitValue=":" caption="&nbsp;" />
+          </div>
+          <div className="count-down-row">
+            <CountDownBlock unitValue="00" caption="Minutes" />
+            <CountDownBlock unitValue=":" caption="&nbsp;" />
+            <CountDownBlock unitValue="00" caption="Seconds" />
+          </div>
           <p className="text-danger">(Could Not Find NextEp Data!)</p>
         </div>
       );
