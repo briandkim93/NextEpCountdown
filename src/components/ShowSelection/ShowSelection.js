@@ -5,7 +5,7 @@ const ShowSelection = (props) => {
     return (
       <li 
         className="list-group-item" 
-        onClick={() => props.onShowSelect(props.showInfo.show.id)}
+        onClick={() => props.onShowSelect(props.showInfo.show)}
       >
         {props.showInfo.show.name}
       </li>
