@@ -11,6 +11,8 @@ const ShowDetail = (props) => {
   }
   if (props.show) {
     const imageSource = props.show.image ? props.show.image.original : imageUnavailable;
+    const showSummary = props.show.summary ? removeElementTags(props.show.summary) : '(Show description currently unavailable)';
+    const unavailableSummaryClass = props.show.summary ? '' : 'unavailable-summary';
     return (
       <div className="show-detail row mt-3">
         <div className="show-detail-img col-sm-4">
@@ -23,7 +25,7 @@ const ShowDetail = (props) => {
         <div className="col-sm-8">
           <h1 className="show-title">{props.show.name}</h1>
           <hr />
-          <p className="summary">{removeElementTags(props.show.summary)}</p>
+          <p className={`summary ${unavailableSummaryClass}`}>{showSummary}</p>
           <hr />
           
           <CountDown secondsUntilNextEp={props.secondsUntilNextEp} />
