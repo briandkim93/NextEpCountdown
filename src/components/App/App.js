@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import './App.css';
+
 import ShowDetail from '../ShowDetail/ShowDetail';
 import SearchBar from '../SearchBar/SearchBar';
 import ShowList from '../ShowList/ShowList';
@@ -11,9 +13,11 @@ class App extends Component {
 
     this.state = {
       searchResults: [], 
+      showSelected: false,
       selectedShowId: '', 
       selectedShow: '',
-      secondsUntilNextEp: ''
+      secondsUntilNextEp: 0,
+      initialSearchState: true
     };
     this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
     this.handleOnShowSelect = this.handleOnShowSelect.bind(this);
@@ -46,23 +50,25 @@ class App extends Component {
     );
   }
   handleOnShowSelect(show) {
-    this.setState({selectedShow: show, showSelected: true});
+    this.setState({selectedShow: show, showSelected: true, initialSearchState: false});
     this.updateNextEpUnixEpochAirTime(show.id);
   }
   render() {
+    const state = this.state.initialSearchState ? 'initial-state' : '';
     return (
       <div className="app">
-        <div className="container my-4">
+        <div className="container">
           <ShowDetail show={this.state.selectedShow} secondsUntilNextEp={this.state.secondsUntilNextEp} />
-          <SearchBar
-            showSelected={this.state.showSelected}
-            onSearchTermChange={this.handleSearchTermChange} 
-          />
-          <ShowList 
-            searchResults={this.state.searchResults} 
-            showSelected={this.state.showSelected}
-            onShowSelect={this.handleOnShowSelect}
-          />
+          <span className={state}>
+            <SearchBar
+              onSearchTermChange={this.handleSearchTermChange} 
+            />
+            <ShowList 
+              searchResults={this.state.searchResults} 
+              showSelected={this.state.showSelected}
+              onShowSelect={this.handleOnShowSelect}
+            />
+          </span>
         </div>
       </div>
     );
