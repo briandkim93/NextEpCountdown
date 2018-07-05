@@ -21,6 +21,13 @@ class SearchBar extends Component {
         placeholder="Search TV Show"
         value={this.state.query}
         onChange={this.updateSearchQuery}
+        onFocus={
+          event => {
+            event.target.select();
+            event.target.placeholder = '';
+          }
+        }
+        onBlur={event => event.target.placeholder = "Search TV Show"}
       />
     );
   }
