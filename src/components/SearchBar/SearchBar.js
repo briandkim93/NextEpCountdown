@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './SearchBar.css';
+
 class SearchBar extends Component {
   constructor(props) {
     super(props);
@@ -14,14 +16,12 @@ class SearchBar extends Component {
   }
   render() {
     return (
-      <div>
-        <input 
-          className="col-12"
-          placeholder="Search TV Show"
-          value={this.state.query}
-          onChange={this.updateSearchQuery}
-        />
-      </div>
+      <input 
+        className="search-bar col-12 my-2 my-sm-4"
+        placeholder="Search TV Show"
+        value={this.state.query}
+        onChange={this.updateSearchQuery}
+      />
     );
   }
 }
