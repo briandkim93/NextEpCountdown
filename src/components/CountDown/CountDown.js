@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import './CountDown.css';
 
+import CountDownBlock from '../CountDownBlock/CountDownBlock';
+
 class CountDown extends Component {
   constructor(props) {
     super(props);
@@ -27,6 +29,8 @@ class CountDown extends Component {
           this.setState({secondsLeft: this.state.secondsLeft - 1});
         }, 1000);
         this.setState({counter});
+      } else {
+        clearInterval(this.state.counter);
       }
     }
   }
@@ -35,27 +39,31 @@ class CountDown extends Component {
     if (this.props.secondsUntilNextEp) {
       const timeLeft = this.convertSeconds(this.state.secondsLeft);
       return (
-        <div>
-          <figure className="unit-block">
-            <span className="unit-value">{timeLeft.days}</span>
-            <figcaption>Days</figcaption>
-          </figure>
-          <figure className="unit-block">
-            <span className="unit-value">{timeLeft.hours}</span>
-            <figcaption>Hours</figcaption>
-          </figure>
-          <figure className="unit-block">
-            <span className="unit-value">{timeLeft.mins}</span>
-            <figcaption>Minutes</figcaption>
-          </figure>
-          <figure className="unit-block">
-            <span className="unit-value">{timeLeft.secs}</span>
-            <figcaption>Seconds</figcaption>
-          </figure>
+        <div className="count-down">
+          <CountDownBlock unitValue={timeLeft.days} caption="Days" />
+          <CountDownBlock unitValue=":" caption="&nbsp;" />
+          <CountDownBlock unitValue={timeLeft.hours >= 10 ? timeLeft.hours : `0${timeLeft.hours}`} caption="Hours" />
+          <CountDownBlock unitValue=":" caption="&nbsp;" />
+          <CountDownBlock unitValue={timeLeft.mins >= 10 ? timeLeft.mins : `0${timeLeft.mins}`} caption="Minutes" />
+          <CountDownBlock unitValue=":" caption="&nbsp;" />
+          <CountDownBlock unitValue={timeLeft.secs >= 10 ? timeLeft.secs : `0${timeLeft.secs}`} caption="Seconds" />
         </div>
       );
+    } else if (this.props.secondsUntilNextEp === 0) {
+      return <div className="count-down"></div>;
     } else {
-      return <div></div>;
+      return (
+        <div className="count-down">
+          <CountDownBlock unitValue="0" caption="Days" />
+          <CountDownBlock unitValue=":" caption="&nbsp;" />
+          <CountDownBlock unitValue="00" caption="Hours" />
+          <CountDownBlock unitValue=":" caption="&nbsp;" />
+          <CountDownBlock unitValue="00" caption="Minutes" />
+          <CountDownBlock unitValue=":" caption="&nbsp;" />
+          <CountDownBlock unitValue="00" caption="Seconds" />
+          <p className="text-danger">(Could Not Find NextEp Data!)</p>
+        </div>
+      );
     }
   }
 }
