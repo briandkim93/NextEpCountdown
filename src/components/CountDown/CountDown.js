@@ -8,20 +8,26 @@ class CountDown extends Component {
   }
   componentDidUpdate(prevProps) {
     if (this.props.secondsUntilNextEp !== prevProps.secondsUntilNextEp) {
-      clearInterval(this.state.counter);
-      this.setState({secondsLeft: this.props.secondsUntilNextEp});
+      if (this.props.secondsUntilNextEp > 0) {
+        clearInterval(this.state.counter);
+        this.setState({secondsLeft: this.props.secondsUntilNextEp});
 
-      const counter = setInterval(() => {
-        this.setState({secondsLeft: this.state.secondsLeft - 1});
-      }, 1000);
-      this.setState({counter});
+        const counter = setInterval(() => {
+          this.setState({secondsLeft: this.state.secondsLeft - 1});
+        }, 1000);
+        this.setState({counter});
+      }
     }
   }
 
   render() {
-    return (
-      <div>Seconds Left Until Next Episode = {this.state.secondsLeft}</div>
-    );
+    if (this.props.secondsUntilNextEp) {
+      return (
+        <div>Seconds Left Until Next Episode = {this.state.secondsLeft}</div>
+      );
+    } else {
+      return <div></div>;
+    }
   }
 }
 
