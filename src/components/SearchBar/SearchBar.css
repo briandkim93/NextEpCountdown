@@ -1,0 +1,21 @@
+.search-bar {
+  text-align: center;
+
+  color: #8b8b8b;
+  border: 0;
+  border-bottom: 1px solid #8b8b8b;
+  background-color: #000000;
+}
+
+.search-bar:focus {
+  outline: none;
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .search-bar {
+    font-size: 1.3rem;
+
+    height: 50px;
+  }
+}

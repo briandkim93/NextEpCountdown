@@ -1,0 +1,35 @@
+.count-down {
+  text-align: center;
+}
+
+.count-down-row {
+  display: inline-block;
+}
+
+.text-danger {
+  font-size: 0.8rem;
+}
+
+/* Very small devices (landscape phones, 360px and up)*/
+@media (min-width: 360px) {
+  .text-danger {
+    font-size: 1.0rem;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .count-down {
+    position: relative;
+    left: -25%;
+    margin-top: 10%;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .count-down {
+    position: static;
+    margin-top: 0;
+  }
+}
