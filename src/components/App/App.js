@@ -13,7 +13,7 @@ class App extends Component {
       searchResults: [], 
       selectedShowId: '', 
       selectedShow: '',
-      nextEpUnixEpochAirTime: ''
+      secondsUntilNextEp: ''
     };
     this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
     this.handleOnShowSelect = this.handleOnShowSelect.bind(this);
@@ -41,7 +41,7 @@ class App extends Component {
           return airDateAndTime.getTime();
         });
         const unairedEpisodesUnixEpochAirTimes = showUnixEpochAirTimes.filter(airTime => airTime >= Date.now());
-        this.setState({nextEpUnixEpochAirTime: unairedEpisodesUnixEpochAirTimes[0]});
+        this.setState({secondsUntilNextEp: Math.round((unairedEpisodesUnixEpochAirTimes[0] - Date.now()) / 1000)});
       }
     );
   }
@@ -53,7 +53,7 @@ class App extends Component {
     return (
       <div className="app">
         <div className="container my-4">
-          <ShowDetail show={this.state.selectedShow} nextEpAirTime={this.state.nextEpUnixEpochAirTime} />
+          <ShowDetail show={this.state.selectedShow} secondsUntilNextEp={this.state.secondsUntilNextEp} />
           <SearchBar
             showSelected={this.state.showSelected}
             onSearchTermChange={this.handleSearchTermChange} 

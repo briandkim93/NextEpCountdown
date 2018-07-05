@@ -3,7 +3,7 @@ import React from 'react';
 import CountDown from '../CountDown/CountDown';
 
 const ShowDetail = (props) => { 
-  function removeHTML(string) {
+  function removeElementTags(string) {
     return string.replace(/<\/?[^>]+(>|$)/g, "");
   }
   if (props.show) {
@@ -13,9 +13,9 @@ const ShowDetail = (props) => {
           <img src={props.show.image.medium} alt={`Poster for ${props.show.name}`} />
         </div>
         <div>
-          {removeHTML(props.show.summary)}
+          {removeElementTags(props.show.summary)}
         </div>
-        <CountDown nextEpAirTime={props.nextEpAirTime} />
+        <CountDown secondsUntilNextEp={props.secondsUntilNextEp} />
       </div>
     );
   } else {
