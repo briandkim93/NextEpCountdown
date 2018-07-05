@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './ShowList.css';
+
 import ShowSelection from '../ShowSelection/ShowSelection';
 
 const ShowList = (props) => {
@@ -15,8 +17,8 @@ const ShowList = (props) => {
     return <ul></ul>;
   } else {
     return (
-      <ul className="list-group">
-        {showSelections}
+      <ul className="show-list list-group">
+        {showSelections.slice(0, 5)}
       </ul>
     );
   }
