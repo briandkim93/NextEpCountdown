@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './ShowDetail.css';
+import imageUnavailable from './images/image-unavailable.png';
 
 import CountDown from '../CountDown/CountDown';
 
@@ -9,7 +10,7 @@ const ShowDetail = (props) => {
     return string.replace(/<\/?[^>]+(>|$)/g, "");
   }
   if (props.show) {
-    const imageSource = props.show.image ? props.show.image.original : '';
+    const imageSource = props.show.image ? props.show.image.original : imageUnavailable;
     return (
       <div className="show-detail row mt-3">
         <div className="show-detail-img col-sm-4">
