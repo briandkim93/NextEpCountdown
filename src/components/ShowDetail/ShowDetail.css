@@ -9,6 +9,10 @@
   padding: 0;
 }
 
+.show-detail-img img {
+  border: 1px solid #8b8b8b
+}
+
 .show-title {
   font-size: 1.4rem;
   font-weight: bold;
@@ -30,7 +34,7 @@ hr {
   border-color: #ffffff;
 }
 
-/* Very small devices (landscape phones, 360px and up)*/
+/*Very small devices (landscape phones, 360px and up)*/
 @media (min-width: 360px) {
   .show-detail-img {
     width: 200px;
