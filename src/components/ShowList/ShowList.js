@@ -17,7 +17,10 @@ const ShowList = (props) => {
     return <ul></ul>;
   } else {
     return (
-      <ul className="show-list list-group">
+      <ul 
+        className="show-list list-group"
+        onMouseOver={event => event.target.focus()}
+      >
         {showSelections.slice(0, 5)}
       </ul>
     );

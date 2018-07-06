@@ -6,8 +6,10 @@ const ShowSelection = (props) => {
   if (props.showInfo) {
     return (
       <li 
-        className="show-selection list-group-item py-1 py-sm-2" 
+        className="show-selection list-group-item py-1 py-sm-2"
+        tabIndex="0" 
         onClick={() => props.onShowSelect(props.showInfo.show)}
+        onKeyPress={(event) => event.key === "Enter" ? props.onShowSelect(props.showInfo.show): false}
       >
         {props.showInfo.show.name}
       </li>
