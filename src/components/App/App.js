@@ -6,6 +6,7 @@ import './App.css';
 import ShowDetail from '../ShowDetail/ShowDetail';
 import SearchBar from '../SearchBar/SearchBar';
 import ShowList from '../ShowList/ShowList';
+import Footer from '../Footer/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -70,6 +71,7 @@ class App extends Component {
             />
           </span>
         </div>
+        <Footer />
       </div>
     );
   }
