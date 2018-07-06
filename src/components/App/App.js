@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import _ from 'lodash';
 
 import './App.css';
 
@@ -55,6 +56,7 @@ class App extends Component {
     this.updateNextEpUnixEpochAirTime(show.id);
   }
   render() {
+    const debouncedSearch = _.debounce(query => {this.handleSearchTermChange(query)}, 250);
     const state = this.state.initialSearchState ? 'initial-state' : '';
     return (
       <div className="app">
@@ -62,7 +64,7 @@ class App extends Component {
           <ShowDetail show={this.state.selectedShow} secondsUntilNextEp={this.state.secondsUntilNextEp} />
           <span className={state}>
             <SearchBar
-              onSearchTermChange={this.handleSearchTermChange} 
+              onSearchTermChange={debouncedSearch} 
             />
             <ShowList 
               searchResults={this.state.searchResults} 
