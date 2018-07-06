@@ -9,6 +9,10 @@
   color: #ffffff;
 }
 
+.show-selection:focus {
+  outline: none;
+}
+
 /* Very small devices (landscape phones, 360px and up)*/
 @media (min-width: 360px) {
 }
