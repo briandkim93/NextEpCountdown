@@ -62,7 +62,7 @@ class App extends Component {
       <div className="app">
         <div className="container">
           <ShowDetail show={this.state.selectedShow} secondsUntilNextEp={this.state.secondsUntilNextEp} />
-          <span className={state}>
+          <span className={this.state.initialSearchState ? 'initial-state' : 'final-state'}>
             <SearchBar
               onSearchTermChange={debouncedSearch} 
             />
