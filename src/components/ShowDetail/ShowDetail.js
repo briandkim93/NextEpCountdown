@@ -22,12 +22,11 @@ const ShowDetail = (props) => {
             alt={`Poster for ${props.show.name}`} 
           />
         </div>
-        <div className="col-sm-8">
+        <div className="detail-container col-sm-8">
           <h1 className="show-title">{props.show.name}</h1>
           <hr />
           <p className={`summary ${unavailableSummaryClass}`}>{showSummary}</p>
           <hr />
-          
           <CountDown secondsUntilNextEp={props.secondsUntilNextEp} />
         </div>
       </div>
