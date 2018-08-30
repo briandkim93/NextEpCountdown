@@ -1,3 +1,7 @@
+.app {
+  min-height: 700px;
+}
+
 .initial-state {
   position: fixed;
   top: 40%;
@@ -5,4 +9,43 @@
 
   width: 75%;
   margin-left: -37.5%;
+}
+
+/*Very small devices (landscape phones, 360px and up)*/
+@media (min-width: 360px) {
+  .show-detail-img {
+    width: 200px;
+    height: 300px;
+  }
+  .show-title {
+    font-size: 1.8rem;
+  }
+  .summary {
+    font-size: 0.95rem;
+
+    height: 110px;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .show-detail-img {
+    height: 100%;
+    margin: 0;
+  }
+  .summary {
+    height: 175px;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .show-title {
+    font-size: 2.0rem;
+  }
+  .summary {
+    font-size: 1.0rem;
+
+    height: 145px;
+  }
 }

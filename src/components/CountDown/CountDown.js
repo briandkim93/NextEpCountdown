@@ -59,7 +59,7 @@ class CountDown extends Component {
       return (
         <div className="count-down">
           <div className="count-down-row">
-            <CountDownBlock unitValue="0" caption="Days" />
+            <CountDownBlock unitValue="00" caption="Days" />
             <CountDownBlock unitValue=":" caption="&nbsp;" />
             <CountDownBlock unitValue="00" caption="Hours" />
             <CountDownBlock unitValue=":" caption="&nbsp;" />
