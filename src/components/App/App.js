@@ -59,10 +59,10 @@ class App extends Component {
     const debouncedSearch = _.debounce(query => {this.handleSearchTermChange(query)}, 250);
     const state = this.state.initialSearchState ? 'initial-state' : '';
     return (
-      <div className="app">
+      <div className={this.state.initialSearchState ? 'initial-app-state' : 'app'}>
         <div className="container">
           <ShowDetail show={this.state.selectedShow} secondsUntilNextEp={this.state.secondsUntilNextEp} />
-          <span className={this.state.initialSearchState ? 'initial-state' : 'final-state'}>
+          <span className={this.state.initialSearchState && 'initial-search-state'}>
             <SearchBar
               onSearchTermChange={debouncedSearch} 
             />

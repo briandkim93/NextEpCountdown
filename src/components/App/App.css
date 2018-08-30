@@ -1,10 +1,14 @@
+.initial-app-state {
+  height: 100px !important;
+}
+
 .app {
   min-height: 700px;
 }
 
-.initial-state {
-  position: fixed;
-  top: 40%;
+.initial-search-state {
+  position: absolute;
+  top: 30%;
   left: 50%;
 
   width: 75%;
@@ -14,13 +18,20 @@
 /*Very small devices (landscape phones, 360px and up)*/
 @media (min-width: 360px) {
   .app {
-    min-height: 900px;
+    min-height: 850px;
   }
 }
 
-/*Medium devices (landscape phones, 760px and up)*/
+/*Medium devices (landscape phones, 768px and up)*/
 @media (min-width: 768px) {
   .app {
-    min-height: 800px;
+    min-height: 750px;
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .app {
+    height: 1000px;
   }
 }
