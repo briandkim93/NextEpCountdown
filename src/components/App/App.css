@@ -15,23 +15,10 @@
   margin-left: -37.5%;
 }
 
-/*Very small devices (landscape phones, 360px and up)*/
-@media (min-width: 360px) {
-  .app {
-    min-height: 850px;
-  }
+.initial-search-state li {
+  border: 0 !important;
 }
 
-/*Medium devices (landscape phones, 768px and up)*/
-@media (min-width: 768px) {
-  .app {
-    min-height: 750px;
-  }
-}
-
-/*Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) {
-  .app {
-    height: 1000px;
-  }
+.final-search-state {
+  margin-top: 25px;
 }

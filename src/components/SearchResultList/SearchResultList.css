@@ -1,0 +1,10 @@
+.search-result-list {
+  position: absolute;
+  z-index: 10000;
+
+  width: 90%;
+  margin-bottom: 50px;
+  padding: 0;
+
+  color: #ffffff;
+}

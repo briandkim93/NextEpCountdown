@@ -8,8 +8,11 @@ class CountDown extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {secondsLeft: ''};
+    this.state = {
+      secondsLeft: ''
+    };
   }
+
   convertSeconds(n) {
     const dateObject = {
       days: Math.floor(n / 86400),
@@ -19,16 +22,22 @@ class CountDown extends Component {
     }
     return dateObject;
   }
+  
   componentDidUpdate(prevProps) {
     if (this.props.secondsUntilNextEp !== prevProps.secondsUntilNextEp) {
       if (this.props.secondsUntilNextEp > 0) {
         clearInterval(this.state.counter);
-        this.setState({secondsLeft: this.props.secondsUntilNextEp});
-
+        this.setState({
+          secondsLeft: this.props.secondsUntilNextEp
+        });
         const counter = setInterval(() => {
-          this.setState({secondsLeft: this.state.secondsLeft - 1});
+          this.setState({
+            secondsLeft: this.state.secondsLeft - 1
+          });
         }, 1000);
-        this.setState({counter});
+        this.setState({
+          counter: counter
+        });
       } else {
         clearInterval(this.state.counter);
       }

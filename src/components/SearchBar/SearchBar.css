@@ -1,17 +1,19 @@
 .search-bar {
+  height: 35px;
+
   text-align: center;
 
-  color: #8b8b8b;
+  color: #ffffff;
   border: 0;
-  border-bottom: 1px solid #8b8b8b;
-  background-color: #000000;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background-color: #2f2f2f;
 }
 
 .search-bar:focus {
   outline: none;
 }
 
-/*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
   .search-bar {
     font-size: 1.3rem;

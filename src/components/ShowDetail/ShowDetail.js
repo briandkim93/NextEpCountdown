@@ -9,6 +9,7 @@ const ShowDetail = (props) => {
   function removeElementTags(string) {
     return string.replace(/<\/?[^>]+(>|$)/g, "");
   }
+  
   if (props.show) {
     const imageSource = props.show.image ? props.show.image.original : imageUnavailable;
     const showSummary = props.show.summary ? removeElementTags(props.show.summary) : '(Show description currently unavailable)';

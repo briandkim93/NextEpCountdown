@@ -1,0 +1,32 @@
+.search-result-item {
+  margin-top: -1px;
+
+  text-align: center;
+
+  color: #8b8b8b;
+  border-color: #000000;
+  background-color: #222222;
+}
+
+.search-result-item:hover {
+  cursor: pointer;
+
+  color: #ffffff;
+}
+
+.search-result-item:focus {
+  color: #ffffff;
+  outline: none;
+}
+
+@media (min-width: 576px) {
+  .search-result-item {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .search-result-item {
+    font-size: 1.5rem;
+  }
+}

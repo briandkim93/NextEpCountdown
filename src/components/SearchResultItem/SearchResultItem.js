@@ -1,12 +1,12 @@
 import React from 'react';
 
-import './ShowSelection.css';
+import './SearchResultItem.css';
 
-const ShowSelection = (props) => {
+const SearchResultItem = (props) => {
   if (props.showInfo) {
     return (
       <li 
-        className="show-selection list-group-item py-1 py-sm-2"
+        className="search-result-item list-group-item py-1 py-sm-2"
         tabIndex="0" 
         onClick={() => props.onShowSelect(props.showInfo.show)}
         onKeyPress={(event) => event.key === "Enter" ? props.onShowSelect(props.showInfo.show): false}
@@ -19,4 +19,4 @@ const ShowSelection = (props) => {
   }
 }
 
-export default ShowSelection;
+export default SearchResultItem;
