@@ -24,10 +24,12 @@ const ShowDetail = (props) => {
           />
         </div>
         <div className="detail-container col-sm-8">
-          <h1 className="show-title">{props.show.name}</h1>
-          <hr />
-          <p className={`summary ${unavailableSummaryClass}`}>{showSummary}</p>
-          <hr />
+          <h1 className="show-title">
+            {props.show.name}
+          </h1>
+          <div className={`summary ${unavailableSummaryClass}`}>
+            {showSummary}
+          </div>
           <CountDown secondsUntilNextEp={props.secondsUntilNextEp} />
         </div>
       </div>

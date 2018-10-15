@@ -1,7 +1,7 @@
 .count-down {
-  text-align: center;
-
   margin-bottom: 150px;
+
+  text-align: center;
 }
 
 .count-down-row {
@@ -10,6 +10,8 @@
 
 .text-danger {
   font-size: 0.8rem;
+
+  margin-left: -25px !important;
 }
 
 @media (min-width: 360px) {
@@ -21,8 +23,9 @@
 @media (min-width: 576px) {
   .count-down {
     position: relative;
-    left: -25%;
+    left: -55%;
 
+    width: 500px;
     margin-top: 10%;
   }
 }
@@ -30,7 +33,15 @@
 @media (min-width: 768px) {
   .count-down {
     position: static;
+    left: 0;
 
+    width: 100%;
     margin-top: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .invisible {
+    display: none;
   }
 }

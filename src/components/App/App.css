@@ -2,23 +2,31 @@
   height: 100px !important;
 }
 
-.app {
-  min-height: 700px;
-}
-
 .initial-search-state {
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
 
   width: 75%;
   margin-left: -37.5%;
 }
 
-.initial-search-state li {
-  border: 0 !important;
-}
-
 .final-search-state {
   margin-top: 25px;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    height: 7px;
+    background-color: #333333;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: #888888;
+}
+
+::-webkit-scrollbar-corner {
+  background: #333333;
 }

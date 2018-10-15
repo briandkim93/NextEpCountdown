@@ -11,11 +11,12 @@
 .search-result-item:hover {
   cursor: pointer;
 
-  color: #ffffff;
+  background-color: #1f1f1f;
+  color: #d14800;
 }
 
 .search-result-item:focus {
-  color: #ffffff;
+  color: #d14800;
   outline: none;
 }
 

@@ -77,8 +77,17 @@ class CountDown extends Component {
             <CountDownBlock unitValue="00" caption="Minutes" />
             <CountDownBlock unitValue=":" caption="&nbsp;" />
             <CountDownBlock unitValue="00" caption="Seconds" />
+            <span className="invisible"><CountDownBlock unitValue=":" caption="&nbsp;" /></span>
           </div>
-          <p className="text-danger">(Could Not Find NextEp Data!)</p>
+          <div className="text-danger mt-3 mb-0">
+            Program Concluded
+          </div>
+          <div className="text-danger m-0">
+            - OR -
+          </div>
+          <div className="text-danger m-0">
+            Next Episode Airtime TBD
+          </div>
         </div>
       );
     }
