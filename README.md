@@ -9,6 +9,5 @@ Then execute the following commands while in the ViralShorts directory:
 
 ```
 npm install
-npm install --save axios
 npm start
 ```
